@@ -1,0 +1,70 @@
+<!--
+  Generated template for the AddMedicamento page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>{{titulo}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label floating>Nombre del Medicamento</ion-label>
+      <ion-input [(ngModel)]="nombre" type="text" ></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Dosis (Pastillas) </ion-label>
+      <ion-input [(ngModel)]="dosis" type="number" min="1" step="1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>N° de pastillas agregadas al pastillero</ion-label>
+      <ion-input [(ngModel)]="inventario" type="number" min="1" step="1"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>Cada cuantas horas</ion-label>
+      <ion-select [(ngModel)]="tiempo" cancelText="Cancelar" okText="Aceptar">
+        <ion-option value="200">Cada 2 horas</ion-option>
+        <ion-option value="300">Cada 3 horas</ion-option>
+        <ion-option value="400">Cada 4 horas</ion-option>
+        <ion-option value="600">Cada 6 horas</ion-option>
+        <ion-option value="800">Cada 8 horas</ion-option>
+        <ion-option value="1200">Cada 12 horas</ion-option>
+        <ion-option value="2400">Cada 24 horas</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-item>
+      <ion-label floating>A partir de que hora</ion-label>
+      <ion-datetime displayFormat="HH:mm" pickerFormat="HH:mm"
+                    minuteValues="0,10,20,30,40,50"
+                    doneText="Aceptar"
+                    [(ngModel)]="inicio" cancelText="Cancelar"
+      ></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label floating>Descripción (Opcional)</ion-label>
+      <ion-input [(ngModel)]="descripcion" type="text"></ion-input>
+    </ion-item>
+
+    <button margin-top="30px" ion-button block [style.background-color]="ranura.color"
+            (click)="abrirModal()" [style.color]="ranura.text">{{ranura.texto}}
+    </button>
+
+    <button margin-top="30px" ion-button block color="primary"
+            (click)="agregarMedicamento()"
+            [disabled]="check()">
+      Guardar
+    </button>
+
+  </ion-list>
+</ion-content>

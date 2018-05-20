@@ -1,5 +1,32 @@
-// http://ionicframework.com/docs/theming/
+// http://ionicframework.com/docs/v2/theming/
 
+.fixed-content {
+  background-color: #f4f4f4 !important;
+}
+
+.menu-inner {
+  .fixed-content {
+    background-color: #337ab7 !important;
+    color: white;
+  }
+
+  .item-block{
+    background-color: #337ab7 !important;
+    color: white;
+  }
+}
+
+.toolbar-background {
+  background-color: #337ab7 !important;
+}
+
+.toolbar-title{
+  color: white;
+}
+
+.bar-button-menutoggle-md{
+  color:white!important;
+}
 
 // App Global Sass
 // --------------------------------------------------

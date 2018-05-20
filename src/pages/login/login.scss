@@ -1,0 +1,36 @@
+page-login {
+  .login{
+    background-image: url('../../assets/images/login.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .login-form{
+    background-color: rgba(255,255,255, 0.7);
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-bottom: 30px;
+    margin-top: 15px
+  }
+
+  .logo{
+    max-width: 100%;
+    max-height: 50px;
+    border: 0;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    top: px;
+    right: 0;
+  }
+}
+

@@ -1,0 +1,42 @@
+<!--
+  Generated template for the RanuraModal page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Selecciona una ranura</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+  <ion-row>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: green" (click)="dismiss(0)"><ion-icon name="close-circle" *ngIf="ranuras[0].disponible == false"></ion-icon>{{ranuras[0].text}}</button>
+    </ion-col>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: yellow" (click)="dismiss(1)"><ion-icon name="close-circle" *ngIf="ranuras[1].disponible == false"></ion-icon>{{ranuras[1].text}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: red" (click)="dismiss(2)"><ion-icon name="close-circle" *ngIf="ranuras[2].disponible == false"></ion-icon>{{ranuras[2].text}}</button>
+    </ion-col>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: blue"  (click)="dismiss(3)"><ion-icon name="close-circle" *ngIf="ranuras[3].disponible == false"></ion-icon>{{ranuras[3].text}}</button>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: deeppink" (click)="dismiss(4)"><ion-icon name="close-circle" *ngIf="ranuras[4].disponible == false"></ion-icon>{{ranuras[4].text}}</button>
+    </ion-col>
+    <ion-col col-sm-6>
+      <button ion-button block color="primary" style="background-color: blueviolet"  (click)="dismiss(5)"><ion-icon name="close-circle" *ngIf="ranuras[5].disponible == false"></ion-icon>{{ranuras[5].text}}</button>
+    </ion-col>
+  </ion-row>
+  </ion-grid>
+</ion-content>

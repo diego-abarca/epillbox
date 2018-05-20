@@ -1,14 +1,56 @@
+<!--
+  Generated template for the Home page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Bienvenido</ion-title>
   </ion-navbar>
 </ion-header>
 
+
+<!--<ion-content padding>-->
+<!--<ion-list [virtualScroll]="medicamentos">-->
+<!--<ion-item *virtualItem="let item">-->
+<!--{{ item.descripcion }}-->
+<!--</ion-item>-->
+<!--</ion-list>-->
+<!--</ion-content>-->
+
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+  <ion-card *ngIf="medicamentos.length==0">
+    <ion-card-content>
+      <p class="description">
+        <ion-icon name="warning"></ion-icon> No hay medicamentos activos actualmente
+      </p>
+      <br>
+      <button ion-button block color="primary" (click)="goToAdd()">
+        <ion-icon name="add"></ion-icon>  Agregar Medicamento
+      </button>
+    </ion-card-content>
+  </ion-card>
+  <ion-list [virtualScroll]="medicamentos" approxItemHeight="250px" >
+    <ion-card *virtualItem="let med" (click)="goToInfo(med)">
+      <div class="ranura" [style.backgroundColor]="returnColor(med.ranura)">
+        <div class="ranura-text">
+          Ranura: {{med.ranura}}
+        </div>
+      </div>
+      <ion-card-content>
+        <ion-card-title>
+          {{med.nombre}}
+        </ion-card-title>
+        <p>
+          <ion-icon name="alarm"></ion-icon> Próxima Alarma: {{getNextAlarm(med) | alarma}}
+        </p>
+      </ion-card-content>
+    </ion-card>
+  </ion-list>
 </ion-content>
+
+
